@@ -3,11 +3,11 @@
 
 uLCD_4DGL uLCD(D1, D0, D2); // serial tx, serial rx, reset pin;
 PwmOut PWM1(D6);
+Serial pc( USBTX, USBRX );
 
-float ADC[128];
+float ADCdata[128];
 float data;
-
-
+ 
 int main()
 {
 
@@ -28,6 +28,7 @@ int main()
 
         for (float i = 0; i < 1; i += 0.1)
         {
+
             PWM1 = i;
             wait(0.1);
         }
